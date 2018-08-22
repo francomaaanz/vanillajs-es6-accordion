@@ -18,7 +18,7 @@ The `"accordion.js"`  file will be generated in `"./dist"` folder. Once generate
  To see the accordion working:
  
  ```
- https://francomaaanz.github.io/vanillajs-es6-accordion/dist/
+ https://francomaaanz.github.io/vanillajs-es6-accordion/
  ```
 
 The project contains 3 types of accordions:
