@@ -55,7 +55,7 @@ Init Accordion
 
 ```javascript
 const el = document.getElementById('accordion1');
-new AccordionBubbling(el);
+new Accordion(el);
 ```
 
 ## Accordion 2 - Dynamic

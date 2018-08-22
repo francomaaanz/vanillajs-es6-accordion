@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Schibsted Accordion</title>
+</head>
+
+<body>
+  <section class="section">
+
+    <h1 align="center">Schibsted accordion</h1>
+
+    <h3>JS accordion - event bubbling</h3>
+
+    <div>
+      <button id="btn1" class="btn btnRed btn--ripple">Add a movie!</button>
+    </div>
+    <div class="accordion">
+      <dl class="accordion-container" id="accordion1">
+        <dt class="accordion-panel">Spider-Man</dt>
+        <dd class="accordion-content">
+          <p>
+            A mentally disturbed man takes residence in a halfway house. His mind gradually slips back into the realm created by his
+            illness, where he replays a key part of his childhood.
+          </p>
+        </dd>
+        <dt class="accordion-panel">Ghost Story</dt>
+        <dd class="accordion-content">
+          <p>
+            Four successful elderly gentlemen, members of the Chowder Society, share a gruesome, 50-year old secret. When one of Edward
+            Wanderley's twin sons dies in a bizarre accident, the group begins to see a pattern of frightening events developing.
+          </p>
+        </dd>
+        <dt class="accordion-panel">Walking With Dinosaurs</dt>
+        <dd class="accordion-content">
+          <p>
+            Walking with Dinosaurs 3D is a film depicting life-like 3D dinosaur characters set in photo-real landscapes that transports
+            audiences to the prehistoric world as it existed 70 million years ago. The film is based on the 1999 documentary
+            television miniseries Walking with Dinosaurs, produced by the BBC. Walking with Dinosaurs 3D is being produced
+            by Evergreen Studios, the company that produced Happy Feet, and it is was released on October 11, 2013.
+          </p>
+        </dd>
+      </dl>
+    </div>
+
+    <h3>Configurable accordion</h3>
+
+    <div class="accordion">
+      <dl class="accordion-container" id="accordion2">
+
+      </dl>
+    </div>
+
+    <h3>No js accordion</h3>
+    <div class="accordion no-js">
+      <div class="accordion__container">
+        <div class="accordionItemWrapper">
+          <label for="chbox1" class="accordionLabelTrigger ripple">Section 1</label>
+          <input type="checkbox" class="accordionIpt" id="chbox1">
+          <div class="accordion-content">
+            <p>Section 1 Content...</p>
+          </div>
+        </div>
+
+        <div class="accordionItemWrapper">
+          <label for="chbox2" class="accordionLabelTrigger ripple">Section 2</label>
+          <input type="checkbox" class="accordionIpt" id="chbox2">
+          <div class="accordion-content">
+            <p>Section 2 Content...</p>
+          </div>
+        </div>
+
+        <div class="accordionItemWrapper">
+          <label for="chbox3" class="accordionLabelTrigger ripple">Section 3</label>
+          <input type="checkbox" class="accordionIpt" id="chbox3">
+          <div class="accordion-content">
+            <p>Section 3 Content...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="accordion.js"></script>
+</body>
+
+</html>
