@@ -6,7 +6,7 @@ import * as Const from './utils/Constants'
 
 const configAccordion = {
   mainClass: 'testMainClass',
-  containerClassName: 'testcontainerClass',
+  containerClassName: 'testContainerClass',
   headerClassName: 'testHeaderClass',
   contentClassName: 'testContentClass',
   classActive: ' is-active',
@@ -28,13 +28,14 @@ const btn = document.getElementById('btn1');
 let incremental = 6;
 
 btn.addEventListener('click', e => {
-  const elm = document.getElementById('accordion1');
+
   if (incremental === 9) {
     return alert('No more data to fetch! Please reload the browser.')
   }
 
   const url = `${Const.url_domain}movie/35${incremental}286?${Const.api_key}`;
-  Http.doGet(url, populateNewSection, Http.errorHandler, elm);
+  
+  Http.doGet(url, populateNewSection, Http.errorHandler, el);
   incremental++;
 })
 
