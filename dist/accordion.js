@@ -1045,7 +1045,7 @@ class AccordionDynamic {
         this.elId = el.id;
         this.elementSelected = null
         this.accordionTriggerCB = this.accordionTriggerCB.bind(this);
-        this._render = this._render.bind(this);
+        this.render = this.render.bind(this);
         this.init = this.init.bind(this);
 
         this.props = Object(util__WEBPACK_IMPORTED_MODULE_0__["isObject"])(opt) && opt || null;        
@@ -1088,7 +1088,7 @@ class AccordionDynamic {
                 throw new Error('Please, check the provided accordion configuration.')                
             }         
 
-            this._render(this.props)
+            this.render(this.props)
 
             document.addEventListener('click', this.accordionTriggerCB, false);
         } catch (err) {
@@ -1096,7 +1096,7 @@ class AccordionDynamic {
         }
     }   
 
-    _render(opt) {        
+    render(opt) {        
         if(opt.data && opt.data.length === 0) {
             this.el.innerHTML = `<p class="Accordion-noData">No data to load</p>`
         } else {
