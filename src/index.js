@@ -5,11 +5,11 @@ import * as Http from './utils/Http'
 import * as Const from './utils/Constants'
 
 const configAccordion = {
-  mainClass: 'accordion',
-  containerClassName: 'accordion-container',
-  headerClassName: 'accordion-panel',
-  contentClassName: 'accordion-content',
-  classActive: ' accordion-panel--active',
+  mainClass: 'Accordion',
+  containerClassName: 'Accordion-container',
+  headerClassName: 'Accordion-panel',
+  contentClassName: 'Accordion-content',
+  classActive: ' is-active',
   data: [
     { title: 'title 1 from config', content: "content 1 from config ", active: true },
     { title: 'title 2 from config', content: "content 2 from config ", active: false },
@@ -44,8 +44,8 @@ function populateNewSection(data, elm) {
   const container = elm;
   let newContent = "";
   const template = `
-    <dt class="accordion-panel"> ${data && data.title}</dt>
-    <dd class="accordion-content">
+    <dt class="Accordion-panel"> ${data && data.title}</dt>
+    <dd class="Accordion-content">
       <p>
       ${data && data.overview}
       </p>

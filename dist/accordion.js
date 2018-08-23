@@ -980,14 +980,14 @@ class Accordion {
     }
 
     hideContent(el) {
-        el.classList.remove('accordion-panel--active')
+        el.classList.remove('is-active')
     }
 
-    showContent(el, id) {        
+    showContent(el) {        
         if(this.elementSelected) {
-            this.elementSelected.classList.remove('accordion-panel--active')
+            this.elementSelected.classList.remove('is-active')
         }                
-        el.classList.add('accordion-panel--active')
+        el.classList.add('is-active')
         this.elementSelected = el
     }
 
@@ -1000,10 +1000,10 @@ class Accordion {
         if (nodeId == this.elId.toString()) {
             const id = this.elId
 
-            if (el.classList.contains('accordion-panel--active')) {
+            if (el.classList.contains('is-active')) {
                 this.hideContent(el)
             } else {
-                this.showContent(el, id)
+                this.showContent(el)
             }
         }
     }
@@ -1043,6 +1043,7 @@ class AccordionDynamic {
     constructor(el, opt) {
         this.el = el;
         this.elId = el.id;
+        this.elementSelected = null
         this.accordionTriggerCB = this.accordionTriggerCB.bind(this);
         this._render = this._render.bind(this);
         this.init = this.init.bind(this);
@@ -1053,16 +1054,17 @@ class AccordionDynamic {
     }
 
     hideContent(el) {
-        el.classList.remove('accordion-panel--active')
+        el.classList.remove('is-active')
     }
 
 
-    showContent(el, id) {
-        const selector = `#${id} dt.accordion-panel--active`
-        const showElement =  document.querySelector(selector) 
-
-        if(showElement) showElement.classList.remove('accordion-panel--active')
-        el.classList.add('accordion-panel--active')
+    showContent(el) {
+        if(this.elementSelected) {
+            this.elementSelected.classList.remove('is-active')
+        }            
+            
+        el.classList.add('is-active')
+        this.elementSelected = el
     }
 
     accordionTriggerCB(event) {
@@ -1072,10 +1074,10 @@ class AccordionDynamic {
         if (nodeId == this.elId.toString()) {
             const id = this.elId;
 
-            if (el.classList.contains('accordion-panel--active')) {
+            if (el.classList.contains('is-active')) {
                 this.hideContent(el)
             } else {
-                this.showContent(el, id)
+                this.showContent(el)
             }
         }
     }
@@ -1095,13 +1097,13 @@ class AccordionDynamic {
     }   
 
     _render(opt) {        
-        if(opt.data.length === 0) {
-            this.el.innerHTML = `<p class="accordion-noData">No data to load</p>`
+        if(opt.data && opt.data.length === 0) {
+            this.el.innerHTML = `<p class="Accordion-noData">No data to load</p>`
         } else {
             return Object(util__WEBPACK_IMPORTED_MODULE_0__["isArray"])(opt.data) && opt.data.map(section => {            
                 const template = `
-                <dt class="${opt.headerClassName ? `opt.headerClassName ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
-                <dd class="${opt.contentClassName ? `opt.contentClassName ${opt.contentClassName}` : ""}">
+                <dt class="${opt.headerClassName ? `Accordion-panel ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
+                <dd class="${opt.contentClassName ? `Accordion-content ${opt.contentClassName}` : ""}">
                     <p>
                     ${section.content}
                     </p>
@@ -1141,11 +1143,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const configAccordion = {
-  mainClass: 'accordion',
-  containerClassName: 'accordion-container',
-  headerClassName: 'accordion-panel',
-  contentClassName: 'accordion-content',
-  classActive: ' accordion-panel--active',
+  mainClass: 'Accordion',
+  containerClassName: 'Accordion-container',
+  headerClassName: 'Accordion-panel',
+  contentClassName: 'Accordion-content',
+  classActive: ' is-active',
   data: [
     { title: 'title 1 from config', content: "content 1 from config ", active: true },
     { title: 'title 2 from config', content: "content 2 from config ", active: false },
@@ -1180,8 +1182,8 @@ function populateNewSection(data, elm) {
   const container = elm;
   let newContent = "";
   const template = `
-    <dt class="accordion-panel"> ${data && data.title}</dt>
-    <dd class="accordion-content">
+    <dt class="Accordion-panel"> ${data && data.title}</dt>
+    <dd class="Accordion-content">
       <p>
       ${data && data.overview}
       </p>

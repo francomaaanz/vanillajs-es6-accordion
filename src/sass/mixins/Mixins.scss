@@ -6,10 +6,10 @@
     border-bottom: 1px solid rgba(196, 196, 196, 0.26);    
     color: white;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: $fontSS;
     font-size: 16px;
     font-weight: 100;
-    padding: 15px;
+    padding: $estandarPadding;
     outline: none;        
     transition: background 0.8s;
 }

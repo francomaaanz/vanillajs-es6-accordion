@@ -22,15 +22,15 @@ h3 {
   .accordion  {
     max-width: 768px; } }
 
-.accordion {
+.Accordion {
   display: block;
   box-shadow: 0 0 4px #999;
   margin: 0 auto; }
-  .accordion-container {
+  .Accordion-container {
     margin: 0 auto 30px; }
-    .accordion-container .accordion-noData {
+    .Accordion-container .Accordion-noData {
       padding: 15px; }
-  .accordion-panel {
+  .Accordion-panel {
     border-bottom: 0;
     background-color: #2196f3;
     background-position: center;
@@ -38,31 +38,31 @@ h3 {
     border-bottom: 1px solid rgba(196, 196, 196, 0.26);
     color: white;
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 100;
     padding: 15px;
     outline: none;
     transition: background 0.8s; }
-    .accordion-panel:hover {
+    .Accordion-panel:hover {
       background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
-    .accordion-panel--active {
-      background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
-    .accordion-panel:active {
+    .Accordion-panel:active {
       background-color: #6eb9f7;
       background-size: 100%;
       transition: background 0s; }
-  .accordion-content {
+    .Accordion-panel.is-active {
+      background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
+  .Accordion-content {
     display: none;
     margin: 0;
     padding: 10px 15px;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc; }
-  .accordion .accordion-panel--active + .accordion-content {
+  .Accordion .Accordion-panel.is-active + .Accordion-content {
     display: block; }
-  .accordion.no-js {
+  .Accordion.AccordionNoJs {
     display: block; }
-    .accordion.no-js .accordionLabelTrigger {
+    .Accordion.AccordionNoJs .Accordion-labelTrigger {
       border-bottom: 0;
       background-color: #2196f3;
       background-position: center;
@@ -70,20 +70,26 @@ h3 {
       border-bottom: 1px solid rgba(196, 196, 196, 0.26);
       color: white;
       cursor: pointer;
-      font-family: sans-serif;
+      font-family: "Open Sans", sans-serif;
       font-size: 16px;
       font-weight: 100;
       padding: 15px;
       outline: none;
       transition: background 0.8s;
       display: block; }
-    .accordion.no-js .accordionIpt,
-    .accordion.no-js .accordion-content {
+      .Accordion.AccordionNoJs .Accordion-labelTrigger:active {
+        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
+      .Accordion.AccordionNoJs .Accordion-labelTrigger:hover {
+        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
+    .Accordion.AccordionNoJs .Accordion-ipt,
+    .Accordion.AccordionNoJs .Accordion-content {
       display: none; }
-    .accordion.no-js .accordionIpt:checked + .accordion-content {
+    .Accordion.AccordionNoJs .Accordion-ipt:checked + .Accordion-content {
       display: block; }
+    .Accordion.AccordionNoJs .Accordion-ipt:checked ~ label {
+      background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; }
 
-.btn {
+.Btn {
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -94,14 +100,14 @@ h3 {
   color: #333;
   border: 1px solid #1b1a1a;
   margin-bottom: 15px; }
-  .btn.btnRed {
+  .Btn.BtnRed {
     background-color: #f32121;
     transition: background 0.8s;
     background-position: center;
     border: 1px solid #f3212100;
     border-bottom: 1px solid rgba(196, 196, 196, 0.26);
     color: #fff; }
-    .btn.btnRed:active {
+    .Btn.BtnRed:active {
       background: #ad0000 radial-gradient(circle, transparent 1%, #ad0000 1%) center/15000%;
       background-size: 100%;
       transition: background 0s; }

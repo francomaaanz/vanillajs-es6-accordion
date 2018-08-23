@@ -1,6 +1,6 @@
 @import '../mixins/mixins';
 
-.accordion {     
+.Accordion {     
     display: block;
     box-shadow: $blackShadowC;
     margin: 0 auto;
@@ -8,7 +8,7 @@
     &-container {
         margin: 0 auto 30px;
 
-        .accordion-noData {
+        .Accordion-noData {
             padding: $estandarPadding;
         }
     }    
@@ -19,15 +19,15 @@
         &:hover {
             background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
         }
-
-        &--active {
-            background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
-        }
         
         &:active {
             background-color: $lightBlueActiveC;
             background-size: 100%;
             transition: background 0s;
+        }
+
+        &.is-active {
+            background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
         }
 
     }
@@ -40,32 +40,45 @@
         border-right: 1px solid $grayC; 
     }
 
-    .accordion-panel {
-        &--active {
-            + .accordion-content {
+    .Accordion-panel {
+        &.is-active {
+            + .Accordion-content {
                 display: block;
             }
         }        
     }
  
     
-    &.no-js {
+    &.AccordionNoJs {
         display: block;        
                 
-        .accordionLabelTrigger {
+        .Accordion-labelTrigger {
             @include rippleEffect();    
-            display: block;                    
+            display: block;
+           
+            &:active {
+                background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
+            }
+
+            &:hover {
+                background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
+            }                    
         }
 
-        .accordionIpt,
-        .accordion-content {
+        .Accordion-ipt,
+        .Accordion-content {
             display: none;
         }                
         
-        .accordionIpt:checked {
-            +.accordion-content {
+        .Accordion-ipt:checked {
+            +.Accordion-content {
                 display: block;
             }
         }
+
+        .Accordion-ipt:checked ~ label {
+            background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
+        }
+
     }
 }

@@ -9,14 +9,14 @@ class Accordion {
     }
 
     hideContent(el) {
-        el.classList.remove('accordion-panel--active')
+        el.classList.remove('is-active')
     }
 
-    showContent(el, id) {        
+    showContent(el) {        
         if(this.elementSelected) {
-            this.elementSelected.classList.remove('accordion-panel--active')
+            this.elementSelected.classList.remove('is-active')
         }                
-        el.classList.add('accordion-panel--active')
+        el.classList.add('is-active')
         this.elementSelected = el
     }
 
@@ -29,10 +29,10 @@ class Accordion {
         if (nodeId == this.elId.toString()) {
             const id = this.elId
 
-            if (el.classList.contains('accordion-panel--active')) {
+            if (el.classList.contains('is-active')) {
                 this.hideContent(el)
             } else {
-                this.showContent(el, id)
+                this.showContent(el)
             }
         }
     }
