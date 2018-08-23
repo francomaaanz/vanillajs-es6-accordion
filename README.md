@@ -92,6 +92,8 @@ HTML Mark up:
 
 ## Accordion without js
 
+This one isn't able to close the other accordion items due to the lack of JS
+
 HTML Mark up:
 
 ```html
