@@ -98,7 +98,7 @@ HTML Mark up:
 <div class="accordion no-js">
     <div class="accordion__container">
         <div class="accordionItemWrapper">
-            <label for="chbox1" class="accordionLabelTrigger ripple">Section 1</label>
+            <label for="chbox1" class="accordionLabelTrigger">Section 1</label>
             <input type="checkbox" class="accordionIpt" id="chbox1">
             <div class="accordion-content">
             <p>Section 1 Content...</p>
@@ -106,7 +106,7 @@ HTML Mark up:
         </div>
 
         <div class="accordionItemWrapper">
-            <label for="chbox2" class="accordionLabelTrigger ripple">Section 2</label>
+            <label for="chbox2" class="accordionLabelTrigger">Section 2</label>
             <input type="checkbox" class="accordionIpt" id="chbox2">
             <div class="accordion-content">
             <p>Section 2 Content...</p>
@@ -114,7 +114,7 @@ HTML Mark up:
         </div>
 
         <div class="accordionItemWrapper">
-            <label for="chbox3" class="accordionLabelTrigger ripple">Section 3</label>
+            <label for="chbox3" class="accordionLabelTrigger">Section 3</label>
             <input type="checkbox" class="accordionIpt" id="chbox3">
             <div class="accordion-content">
             <p>Section 3 Content...</p>
