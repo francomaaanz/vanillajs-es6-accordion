@@ -6,7 +6,7 @@
  npm run start
  ```
 
-The `"accordion.js"`  file will be generated in `"./dist"` folder. Once generated add it to the html file for being use.
+The `"accordion.js"` and `"style.css"` file will be generated in `"./dist"` folder. Once generated add it to the html file for being use.
 
  e2e test
 
