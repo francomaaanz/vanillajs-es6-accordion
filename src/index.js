@@ -5,10 +5,10 @@ import * as Http from './utils/Http'
 import * as Const from './utils/Constants'
 
 const configAccordion = {
-  mainClass: 'Accordion',
-  containerClassName: 'Accordion-container',
-  headerClassName: 'Accordion-panel',
-  contentClassName: 'Accordion-content',
+  mainClass: 'testMainClass',
+  containerClassName: 'testcontainerClass',
+  headerClassName: 'testHeaderClass',
+  contentClassName: 'testContentClass',
   classActive: ' is-active',
   data: [
     { title: 'title 1 from config', content: "content 1 from config ", active: true },

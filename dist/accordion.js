@@ -1100,17 +1100,22 @@ class AccordionDynamic {
         if(opt.data && opt.data.length === 0) {
             this.el.innerHTML = `<p class="Accordion-noData">No data to load</p>`
         } else {
-            return Object(util__WEBPACK_IMPORTED_MODULE_0__["isArray"])(opt.data) && opt.data.map(section => {            
+            return Object(util__WEBPACK_IMPORTED_MODULE_0__["isArray"])(opt.data) && opt.data.map((section, index) => {
+
                 const template = `
-                <dt class="${opt.headerClassName ? `Accordion-panel ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
-                <dd class="${opt.contentClassName ? `Accordion-content ${opt.contentClassName}` : ""}">
+                <dt class="Accordion-panel${opt.headerClassName ? ` ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
+                <dd class="Accordion-content${opt.contentClassName ? ` ${opt.contentClassName}` : ""}">
                     <p>
                     ${section.content}
                     </p>
                 </dd> 
-                `;
-    
+                `;                
                 this.el.innerHTML += template;
+                
+                if(opt.classActive) {
+                    const id = this.elId;                    
+                    this.elementSelected = document.querySelector(`#${id} .Accordion-panel.is-active`);
+                }
             })
         }
         
@@ -1143,10 +1148,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const configAccordion = {
-  mainClass: 'Accordion',
-  containerClassName: 'Accordion-container',
-  headerClassName: 'Accordion-panel',
-  contentClassName: 'Accordion-content',
+  mainClass: 'testMainClass',
+  containerClassName: 'testcontainerClass',
+  headerClassName: 'testHeaderClass',
+  contentClassName: 'testContentClass',
   classActive: ' is-active',
   data: [
     { title: 'title 1 from config', content: "content 1 from config ", active: true },
