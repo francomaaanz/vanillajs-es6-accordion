@@ -15,7 +15,8 @@
 
     &-panel {     
         @include rippleEffect();
-        
+        position: relative;
+
         &:hover {
             background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
         }
@@ -28,6 +29,21 @@
 
         &.is-active {
             background: $lightBlueHoverC radial-gradient(circle, transparent 1%, $lightBlueHoverC 1%) center/15000%;
+
+            &:after {
+                content: "\F0D8";
+            }
+        }
+
+        &:after {
+            content: "\F0D7";
+            display: inline-block;
+            font: normal normal normal 14px/1 'FontAwesome';
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            right: 15px;
         }
 
     }

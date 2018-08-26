@@ -1149,7 +1149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const configAccordion = {
   mainClass: 'testMainClass',
-  containerClassName: 'testcontainerClass',
+  containerClassName: 'testContainerClass',
   headerClassName: 'testHeaderClass',
   contentClassName: 'testContentClass',
   classActive: ' is-active',
@@ -1171,13 +1171,14 @@ const btn = document.getElementById('btn1');
 let incremental = 6;
 
 btn.addEventListener('click', e => {
-  const elm = document.getElementById('accordion1');
+
   if (incremental === 9) {
     return alert('No more data to fetch! Please reload the browser.')
   }
 
   const url = `${_utils_Constants__WEBPACK_IMPORTED_MODULE_4__["url_domain"]}movie/35${incremental}286?${_utils_Constants__WEBPACK_IMPORTED_MODULE_4__["api_key"]}`;
-  _utils_Http__WEBPACK_IMPORTED_MODULE_3__["doGet"](url, populateNewSection, _utils_Http__WEBPACK_IMPORTED_MODULE_3__["errorHandler"], elm);
+  
+  _utils_Http__WEBPACK_IMPORTED_MODULE_3__["doGet"](url, populateNewSection, _utils_Http__WEBPACK_IMPORTED_MODULE_3__["errorHandler"], el);
   incremental++;
 })
 
@@ -1219,6 +1220,7 @@ function createAccordionSection(data, elm) {
   elm.appendChild(section)
 }
 */
+
 
 /***/ }),
 
