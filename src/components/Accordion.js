@@ -3,7 +3,6 @@ class Accordion {
         this.el = el
         this.elId = el.id
         this.elementSelected = null
-        this.accordionTriggerCB = this.accordionTriggerCB.bind(this)
         
         this.init()
     }
@@ -20,7 +19,7 @@ class Accordion {
         this.elementSelected = el
     }
 
-    accordionTriggerCB(event) {
+    accordionTriggerCB = (event) => {
         event.stopPropagation()
 
         const el = event.target
