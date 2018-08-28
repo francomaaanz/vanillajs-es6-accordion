@@ -1,47 +1,47 @@
-    import { isObject, isArray } from "util";
+import { isObject, isArray } from "util";
 
-    class AccordionDynamic {
-        constructor(el, opt) {
-            this.el = el;
-            this.elId = el.id;
-            this.elementSelected = null
+class AccordionDynamic {
+    constructor(el, opt) {
+        this.el = el;
+        this.elId = el.id;
+        this.elementSelected = null
 
-            this.props = isObject(opt) && opt || null;        
+        this.props = isObject(opt) && opt || null;        
 
-            this.init()
-        }
+        this.init()
+    }
 
-        hideContent(el) {
-            el.classList.remove('is-active')
-        }
+    hideContent = (el) => {
+        el.classList.remove('is-active')
+    }
 
 
-        showContent(el) {
-            if(this.elementSelected) {
-                this.elementSelected.classList.remove('is-active')
-            }            
-                
-            el.classList.add('is-active')
-            this.elementSelected = el
-        }
+    showContent = (el) => {
+        if(this.elementSelected) {
+            this.elementSelected.classList.remove('is-active')
+        }            
 
-        accordionTriggerCB = (event) => {
-            const el = event.target;
-            const nodeId = el.parentNode.id;
+        el.classList.add('is-active')
+        this.elementSelected = el
+    }
 
-            if (nodeId == this.elId.toString()) {
-                const id = this.elId;
+    accordionTriggerCB = (event) => {
+        const el = event.target;
+        const nodeId = el.parentNode.id;
 
-                if (el.classList.contains('is-active')) {
-                    this.hideContent(el)
-                } else {
-                    this.showContent(el)
-                }
+        if (nodeId == this.elId.toString()) {
+            const id = this.elId;
+
+            if (el.classList.contains('is-active')) {
+                this.hideContent(el)
+            } else {
+                this.showContent(el)
             }
         }
+    }
 
-        init = () => {
-            try {
+    init = () => {
+        try {
                 if (!this.props) {
                     throw new Error('Please, check the provided accordion configuration.')                
                 }         
@@ -61,13 +61,12 @@
                 return isArray(opt.data) && opt.data.map((section, index) => {
 
                     const template = `
-                    <dt class="Accordion-panel${opt.headerClassName ? ` ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
-                    <dd class="Accordion-content${opt.contentClassName ? ` ${opt.contentClassName}` : ""}">
-                        <p>
-                        ${section.content}
-                        </p>
-                    </dd> 
-                    `;                
+                        <dt class="Accordion-panel${opt.headerClassName ? ` ${opt.headerClassName}` : "" }${section.active ? opt.classActive : ''}"> ${section.title}</dt>
+                        <dd class="Accordion-content${opt.contentClassName ? ` ${opt.contentClassName}` : ""}">
+                            <p>
+                            ${section.content}
+                            </p>
+                        </dd> `;                
                     this.el.innerHTML += template;
                     
                     if(opt.classActive) {
