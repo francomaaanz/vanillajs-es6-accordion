@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 
 export async function doGet(url, cbSuc, cbErr, elm) {
     await fetch(url)
