@@ -7,11 +7,11 @@ class Accordion {
         this.init()
     }
 
-    hideContent(el) {
+    hideContent = (el) => {
         el.classList.remove('is-active')
     }
 
-    showContent(el) {        
+    showContent = (el) => {        
         if(this.elementSelected) {
             this.elementSelected.classList.remove('is-active')
         }                
@@ -36,7 +36,7 @@ class Accordion {
         }
     }
     
-    init() {        
+    init = () => {        
         try {            
             if(this.elId) {
                 const container = this.el
